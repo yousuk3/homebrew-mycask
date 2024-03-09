@@ -28,4 +28,33 @@
 
 これで、自分の専用のtapがHomebrewに追加され、tap内のCaskをインストールできるようになります。
 
-自分だけで運用したいCaskをこのtapで管理することができます。
+# tapにcaskを追加する手順
+
+1. **Caskのトークンとファイル名を生成する:**
+    ```
+    ```bash
+    % "$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/generate_cask_token" 'アプリ名'
+    ```
+    ```
+    ここで、'アプリ名'には追加するアプリケーションの名前を指定します。
+
+    - このコマンドを実行すると、提案されたトークン（名前）、ファイル名、およびCaskのヘッダーラインが表示されます。これらの情報を控えておきます。
+
+2. **Caskファイルを生成する:**
+    ```bash
+    brew create --cask <ダウンロードURL>
+    ```
+    ここで、`<ダウンロードURL>`にはアプリケーションのダウンロードURLを指定します。
+
+    - このコマンドを実行すると、指定されたURLからファイルがダウンロードされ、SHA256ハッシュが計算されます。その後、Caskファイルのテンプレートが生成されます。
+
+3. **Caskファイルを編集してトークンとファイル名を設定する:**
+    - 生成されたCaskファイルをテキストエディタで開き、`generate_cask_token`で提案されたトークン（名前）とファイル名を設定します。
+
+4. **自分専用のtapにCaskファイルを移動する:**
+    ```bash
+    brew tap-new <GitHubユーザー名>/my-tap
+    mv /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Casks/<ファイル名>.rb /usr/local/Homebrew/Library/Taps/<GitHubユーザー名>/my-tap/Casks/
+    ```
+    ここで、`<GitHubユーザー名>`はGitHubのユーザー名、`<ファイル名>`は生成されたCaskファイルの名前です。
+
