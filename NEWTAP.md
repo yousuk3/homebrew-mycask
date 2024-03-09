@@ -50,6 +50,5 @@
 
 4. **自分専用のtapにCaskファイルを移動する:**
    ```
-   brew tap-new <GitHubユーザー名>/my-tap
    mv /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Casks/<ファイル名>.rb /usr/local/Homebrew/Library/Taps/<GitHubユーザー名>/my-tap/Casks/
    ```
