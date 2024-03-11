@@ -6,13 +6,13 @@ This repository contains my own tap for Homebrew Casks.
 
 ## Add the tap
 
-```bash
+```zsh
 brew tap yousuk3/mycask
 ```
 
 ## Install Casks
 
-```bash
+```zsh
 brew install <cask_name>
 ```
 
