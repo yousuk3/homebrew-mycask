@@ -7,12 +7,12 @@ cask "siki" do
 
   url "https://sikiapp.net/archives/#{version}/Siki-darwin-#{arch}-#{version}.zip"
   name "siki"
-  desc "5ch browser"
+  desc "5ch viewer"
   homepage "https://sikiapp.net/"
 
   livecheck do
-    url "https://sikiapp.net/archives/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https://sikiapp.net/download/"
+    regex(/<p>現在の最新バージョンは <code>([\d\.]+)<\/code> です<\/p>/)
   end
 
   depends_on macos: ">= :catalina"
