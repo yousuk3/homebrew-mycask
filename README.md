@@ -28,3 +28,5 @@ brew install <cask_name>
 - [brew caskに登録されていないアプリを追加する](https://oiteiku.netlify.app/posts/make-own-brewcask.html)
 
 - [brew cask にアプリがなかったら追加しよう](https://qiita.com/DriftwoodJP/items/2fae455dc04adea17f96)
+
+- [homebrew-caskにないアプリは自分で追加しよう](https://blog.magcho.com/2019/01/homebrew-cask-add/)
