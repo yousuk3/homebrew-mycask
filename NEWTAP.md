@@ -48,7 +48,7 @@
    ```zsh
    brew create --cask <download-url> --set-name <cask_name> --tap <user_name>/<tap_name>
    ```
-   ここで、`download-url`にはアプリケーションのダウンロードURL(.zipなど)を指定し、`<cask_name>`に先ほど作った名前を入力すると<cask_name>.rbが生成されます。
+   ここで、`<download-url>`にはアプリケーションのダウンロードURL(.zipなど)を指定し、`<cask_name>`に先ほど作った名前を入力すると<cask_name>.rbが生成されます。
 
    - このコマンドを実行すると、指定されたURLからファイルがダウンロードされ、SHA256ハッシュが計算されます。その後、Caskファイルのテンプレートが生成されます。
 
