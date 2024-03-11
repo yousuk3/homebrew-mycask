@@ -69,3 +69,11 @@
    - 生成されたCaskファイルをテキストエディタで開き、`generate_cask_token`で提案されたトークン（名前）とファイル名を設定します。
 
 6. **GitHubにアップロード**:
+
+
+## Documentation
+
+  - [Cask Cookbook](https://docs.brew.sh/Cask-Cookbook)
+  - [Cask stanzas](https://docs.brew.sh/Adding-Software-to-Homebrew#cask-stanzas)
+  - [brew livecheck](https://docs.brew.sh/Brew-Livecheck)
+  - [Stanza: zap](https://docs.brew.sh/Cask-Cookbook#stanza-zap)
