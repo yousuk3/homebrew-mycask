@@ -54,7 +54,7 @@
 
 4. **Caskファイルをチェックする**:
    ```
-   brew audit --cask --new my-new-cask
+   brew audit --cask --new --arch all --no-signing my-new-cask
    ```
 
    - このコマンドを実行すると、ローカルで管理しているCaskファイルについて最新の更新や変更点を確認し、静的解析を実行します。
