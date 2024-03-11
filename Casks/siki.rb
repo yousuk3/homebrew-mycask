@@ -1,23 +1,23 @@
 cask "siki" do
-  arch arm: "-arm64", intel: "-x64"
+  arch arm: "arm64", intel: "x64"
 
-  version "0.28.0"
-   sha256 arm:   "81b5d1a1fa8a33a00c5d43c140664572f7a83e0b1d86418a8c2f5aa7ea4901ba",
-         intel: "1e4fe7c65f4ba4b0abd311b7ebb325f63d15f480f00d3c0970f4e22cb99085c0"
+  version "0.28.1"
+   sha256 arm: "51e12614a37850fa2a35fb8e914b987f11089fc28d79e29811670cd73393900e",
+        intel: "b04f36add76097f6fd60f2f5a24a494b5c8528e17e4c1f8b76bef746e9b2d12a"
 
-  url "https://sikiapp.net/archives/#{version}/Siki-darwin#{arch}-#{version}.zip"
+  url "https://sikiapp.net/archives/#{version}/Siki-darwin-#{arch}-#{version}.zip"
   name "siki"
-  desc "Multi-platform browser for bulletin board websites"
+  desc "5ch browser"
   homepage "https://sikiapp.net/"
 
   livecheck do
-    url "https://sikiapp.net/download/"
-    regex(/href=.*?Siki-darwin-x64-(\d+\.\d+\.\d+).zip/)
+    url "https://sikiapp.net/archives/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   depends_on macos: ">= :catalina"
 
-  app "Siki-darwin#{arch}/Siki.app"
+  app "Siki-darwin-#{arch}/Siki.app"
 
   zap trash: "~/Library/Application Support/siki"
 end
