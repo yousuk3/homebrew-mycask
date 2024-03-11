@@ -4,7 +4,7 @@
 
 1. **Tapの作成**:
    ローカルで新しいtapを作成します。
-   ```
+   ```zsh
    brew tap-new <user_name>/<tap_name>
    ```
 
@@ -13,7 +13,7 @@
 
 3. **GitHubにアップロード**:
    作成したtapをローカルリポジトリにプッシュし、GitHubにアップロードします。
-   ```
+   ```zsh
    cd /usr/local/Homebrew/Library/Taps/<user_name>/homebrew-<tap_name>
    git add .
    git commit -m "Initial commit"
@@ -22,7 +22,7 @@
 
 4. **Homebrewにtapを追加**:
    あなたのHomebrewで、作成したtapを追加します。
-   ```
+   ```zsh
    brew tap <user_name>/<tap_name>
    ```
 
@@ -32,20 +32,20 @@
 # tapにcaskを追加する手順
 
 1. **generate_cask_tokenをダウンロード**:
-   ```
+   ```zsh
    cd /usr/local/Homebrew/Library/Taps/<user_name>/homebrew-<tap_name>
    curl -o generate_cask_token https://raw.githubusercontent.com/Homebrew/homebrew-cask/HEAD/developer/bin/generate_cask_token && chmod 755 generate_cask_token
    ```
 
 2. **Caskのトークンとファイル名を生成する**:
-   ```
+   ```zsh
    generate_cask_token "/full/path/to/new/software.app"
    ```
 
    - このコマンドを実行すると提案されたtoken（名前）、ファイル名、およびCaskのヘッダーラインが表示されます。この名前を<cask_name>にします。
 
 3. **Caskファイルを生成する**:
-   ```
+   ```zsh
    brew create --cask <download-url> --set-name <cask_name> --tap <user_name>/<tap_name>
    ```
    ここで、`download-url`にはアプリケーションのダウンロードURL(.zipなど)を指定し、`<cask_name>`に先ほど作った名前を入力すると<cask_name>.rbが生成されます。
@@ -53,13 +53,13 @@
    - このコマンドを実行すると、指定されたURLからファイルがダウンロードされ、SHA256ハッシュが計算されます。その後、Caskファイルのテンプレートが生成されます。
 
 4. **Caskファイルをチェックする**:
-   ```
+   ```zsh
    brew audit --cask --new --arch all --no-signing <cask_name>
    ```
 
    - このコマンドを実行すると、ローカルで管理しているCaskファイルについて最新の更新や変更点を確認し、静的解析を実行します。
 
-   ```
+   ```zsh
    brew livecheck --debug <cask_name>
    ```
 
