@@ -12,7 +12,7 @@ cask "stackroom" do
     skip "No version information available"
   end
 
-  depends_on formula: "p7zip", macos: ">= :mojave"
+  depends_on formula: "p7zip"
 
   app "Stackroom.app"
 
